@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "redmangomemory",
+  "version": "${version}",
+  "name": "RedMangoMemory17",
+  "description": "",
+  "authors": [
+    "RedLime"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.redlimerl.mcsr.redmangomemory.RedMangoMemory17"
+    ]
+  },
+  "mixins": [
+    "redmangomemory.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "minecraft": "1.17.1"
+  }
+}
