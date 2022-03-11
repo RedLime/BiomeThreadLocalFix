@@ -10,6 +10,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+/**
+ *  For fix vanilla memory leak
+ *  make temperatureCache to static field
+ */
 @Mixin(Biome.class)
 public abstract class MixinBiome {
 

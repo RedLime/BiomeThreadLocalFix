@@ -12,6 +12,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Queue;
 
+/**
+ *  For fix worldPreview memory leak
+ *  Added clear method newParticles Queue when changed world
+ */
 @Mixin(ParticleManager.class)
 public class MixinParticleManager {
 
