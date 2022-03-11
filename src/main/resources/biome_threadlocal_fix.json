@@ -7,7 +7,8 @@
   ],
   "client": [
     "MixinClientWorld",
-    "MixinBiome"
+    "MixinBiome",
+    "MixinParticleManager"
   ],
   "injectors": {
     "defaultRequire": 1

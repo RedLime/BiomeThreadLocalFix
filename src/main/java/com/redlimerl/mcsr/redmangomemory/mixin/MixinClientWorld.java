@@ -38,23 +38,22 @@ public abstract class MixinClientWorld {
     @Inject(method = "tick", at = @At("TAIL"))
     public void onTick(BooleanSupplier shouldKeepTicking, CallbackInfo ci) {
         if (!FabricLoader.getInstance().isDevelopmentEnvironment() || client.isWindowFocused() || client.isPaused()) return;
-        if (i++ > 30) {
-            boolean bl = this.client.isInSingleplayer();
-            boolean bl2 = this.client.isConnectedToRealms();
-            this.disconnect();
-            if (bl) {
-                this.client.disconnect(new SaveLevelScreen(new TranslatableText("menu.savingLevel")));
-            } else {
-                this.client.disconnect();
-            }
-            TitleScreen titleScreen = new TitleScreen();
-            if (bl) {
-                this.client.setScreen(titleScreen);
-            } else if (bl2) {
-                this.client.setScreen(new RealmsMainScreen(titleScreen));
-            } else {
-                this.client.setScreen(new MultiplayerScreen(titleScreen));
-            }
+
+        boolean bl = this.client.isInSingleplayer();
+        boolean bl2 = this.client.isConnectedToRealms();
+        this.disconnect();
+        if (bl) {
+            this.client.disconnect(new SaveLevelScreen(new TranslatableText("menu.savingLevel")));
+        } else {
+            this.client.disconnect();
+        }
+        TitleScreen titleScreen = new TitleScreen();
+        if (bl) {
+            this.client.setScreen(titleScreen);
+        } else if (bl2) {
+            this.client.setScreen(new RealmsMainScreen(titleScreen));
+        } else {
+            this.client.setScreen(new MultiplayerScreen(titleScreen));
         }
     }
 

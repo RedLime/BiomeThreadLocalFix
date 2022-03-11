@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "redmangomemory",
+  "id": "biome_threadlocal_fix",
   "version": "${version}",
-  "name": "RedMangoMemory17",
+  "name": "BiomeThreadLocalFix",
   "description": "",
   "authors": [
     "RedLime"
@@ -12,14 +12,14 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.redlimerl.mcsr.redmangomemory.RedMangoMemory17"
+      "com.redlimerl.mcsr.redmangomemory.BiomeThreadLocalFix"
     ]
   },
   "mixins": [
-    "redmangomemory.json"
+    "biome_threadlocal_fix.json"
   ],
   "depends": {
     "fabricloader": ">=0.13.3",
-    "minecraft": "1.17.1"
+    "minecraft": ">=1.17"
   }
 }
