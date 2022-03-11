@@ -19,7 +19,7 @@
     "biome_threadlocal_fix.json"
   ],
   "depends": {
-    "fabricloader": ">=0.13.3",
+    "fabricloader": ">=0.12",
     "minecraft": ">=1.17"
   }
 }
