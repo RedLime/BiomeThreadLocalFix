@@ -18,8 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class MixinBiome {
 
     private final static ThreadLocal<Long2FloatLinkedOpenHashMap> fixTemperatureCache = ThreadLocal.withInitial(() -> Util.make(() -> {
-        Long2FloatLinkedOpenHashMap long2FloatLinkedOpenHashMap = new Long2FloatLinkedOpenHashMap(1024, 0.25f){
-
+        Long2FloatLinkedOpenHashMap long2FloatLinkedOpenHashMap = new Long2FloatLinkedOpenHashMap(1024, 0.25f) {
             @Override
             protected void rehash(int i) {
             }
