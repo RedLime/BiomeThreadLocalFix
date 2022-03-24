@@ -10,11 +10,7 @@
   "contact": {},
   "license": "MIT",
   "environment": "client",
-  "entrypoints": {
-    "client": [
-      "com.redlimerl.mcsr.redmangomemory.BiomeThreadLocalFix"
-    ]
-  },
+  "entrypoints": {},
   "mixins": [
     "biome_threadlocal_fix.json"
   ],
