@@ -19,6 +19,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.12",
-    "minecraft": ">=1.17"
+    "minecraft": ">=1.16"
   }
 }
