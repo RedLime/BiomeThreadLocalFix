@@ -3,7 +3,7 @@ package com.redlimerl.mcsr.redmangomemory.mixin;
 import it.unimi.dsi.fastutil.longs.Long2FloatLinkedOpenHashMap;
 import net.minecraft.util.Util;
 import net.minecraft.world.biome.Biome;
-import org.lwjgl.system.CallbackI;
+import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -27,8 +27,14 @@ public abstract class MixinBiome {
         return long2FloatLinkedOpenHashMap;
     }));
 
-    @Redirect(method = "<init>", at=@At(value = "INVOKE", target = "Ljava/lang/ThreadLocal;withInitial(Ljava/util/function/Supplier;)Ljava/lang/ThreadLocal;"))
-    public ThreadLocal<Long2FloatLinkedOpenHashMap> temperatureCacheReplacer(Supplier<? extends CallbackI.S> supplier){
+    @Redirect(method = "<init>*", at=@At(value = "INVOKE", target = "Ljava/lang/ThreadLocal;withInitial(Ljava/util/function/Supplier;)Ljava/lang/ThreadLocal;"))
+    public ThreadLocal<Long2FloatLinkedOpenHashMap> temperatureCacheReplacer(Supplier<?> supplier){
         return fixTemperatureCache;
     }
+
+//    @Redirect(method = "<init>*",
+//            at = @At(value = "FIELD", target = "Lnet/minecraft/world/biome/Biome;temperatureCache:Ljava/lang/ThreadLocal;", opcode = Opcodes.PUTFIELD))
+//    public void temperatureCacheReplacer(Biome biome, ThreadLocal<?> threadLocal){
+//        ((AccessorBiome) (Object) biome).setTemperatureThread(fixTemperatureCache);
+//    }
 }
