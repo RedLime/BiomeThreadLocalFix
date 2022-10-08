@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.redlimerl.mcsr.redmangomemory.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinBiome"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

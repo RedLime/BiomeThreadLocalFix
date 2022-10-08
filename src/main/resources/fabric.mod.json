@@ -15,11 +15,10 @@
   "environment": "client",
   "entrypoints": {},
   "mixins": [
-    "biome_threadlocal_fix.json"
+    "biome_threadlocal_fix.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.12",
-    "minecraft": ">=1.16",
-    "java": ">=11"
+    "minecraft": ">=1.14.4"
   }
 }
